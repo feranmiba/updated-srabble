@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="stylesheet" type="text/css" href="./queries.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="./brett-jordan-MHS7g_q-6mE-unsplash.jpg">
+    <title>Amiola-scrabble-game</title>
+</head>
+<body>
+
+    <!--INTRO TO THE GAME-->
+   
+    <div class="name">
+        <p id="word">word</p>
+        <p id="scrabble">scrabble</p>
+        <p id="game">game</p>
+        <p class="moved">
+            <button class="get">
+                get started
+            </button>
+        </p>
+    </div>
+
+    <!--SIGN UP FORM-->
+    <form  class="form   operation--cotent--1  hidden" id="0">
+        <h1 id="personal">Please Sign up</h1>
+        <strong id="text">Please provide your name, email address, and password.</strong>
+
+        
+       
+         <div class="space"> <p class="labels">Name</p>      <p class="fill hidden">This field is required</p></div>  
+         <input type="text" name="Name" id="first" placeholder=" e.g. Amiola Demilade " required  class="names" >
+
+    
+        
+         <div class="space">   <p class="labels">Email</p>    <p class="fill hidden">This field is required</p></div>  
+          <input type="email" name="Name" id="second" placeholder="e.g. amiolademilade@gmail.com" required  class="email" >
+       
+      
+     <div class="space">  <p class="labels">Password</p>     <p class="fill hidden">This field is required</p></div>  
+        <input type="password" name="Name" id="third" placeholder="****" required class="pass" >
+        
+    
+
+     <div class="space"><p><a href="#" class="next   first"  id="1">Done</a></p>   <p><a href="#" class="next   secont"  id="1">Skip</a></p></div>   
+        </form>
+
+
+
+
+    <!--THE GAME-->
+    <nav class="move hidden"> 
+        <div class="spaces   welcome">
+            <p class="back">welcome     <b class="user"></b></p>
+            <li class="sign">
+                <a href="#" class="up blow">
+                    sign up
+                </a>
+                <a href="#" class="high blow">
+                    highscore
+                </a>
+            </li>
+        </div>
+    </nav>
+    <div class="container hidden">
+        <h2>Word Scrabble</h2>   
+        <div class="content">
+            <p class="word"></p>
+            <div class="details">
+                <p class="hint">HINT: <span></span></p>
+                <p class="time">Time Left: <span><b class="sec">30</b>s</span></p>
+            </div>
+            <input type="text" placeholder="Enter a valid word" class="text">
+            <div class="buttons">
+                <button class="refresh-word">Refresh Word</button>
+                <button class="check-word">Check Word</button>
+            </div>
+        </div>    
+    </div>
+<!--THE OUTCOMES-->
+    <div class="overlay hidden"></div>
+    <section class="outcome hidden">
+        <div class="again">
+        <p class="message"></p>
+        <p class="ok"><button class="okay">ok</button></p>
+    </div>
+    </section>
+    <script type="module" src="./js/script.js" defer></script>
+    <script type="module" src="./js/word.js" defer></script>
+</body>
+</html>

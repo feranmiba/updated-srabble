@@ -1,0 +1,156 @@
+/*small phones to small tablets: from 481 to 560px*/
+@media only screen and (max-width: 1300px) {
+    .outcome {
+        width: 50%;
+    }
+ }
+ @media only screen and (max-width: 886px) {
+    .outcome {
+        width: 65%;
+    }
+    .move {
+        margin-top: -70%;
+    }
+    .sign {
+        width: 90%;
+    }
+    .blow {
+        font-size: 13px;
+        padding-left: 20px;
+    }
+    .back {
+        padding-right: 400px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+ }
+ @media only screen and (max-width: 750px) {
+    .outcome {
+        width: 75%;
+    }
+ }
+ @media only screen and (max-width: 550px) {
+    .outcome {
+        width: 90%;
+        padding-right: 50px;
+    }
+    .message {
+        font-size: 16px;
+    }
+    .container {
+        width: 380px;
+        
+    }
+    .ok {
+        margin-left: 95%;
+    }
+    .content  .word {
+        font-size: 30px;    
+        letter-spacing: 18px;
+    }
+    .move {
+        margin-top: -90%;
+    }
+    .sign {
+        width: 200%;
+    }
+    .blow {
+        font-size: 13px;
+        padding-left: 12px;
+    }
+    .back {
+        padding-right: 150px;
+        font-size: 18px;
+        font-weight: 500;
+    }
+ }
+ @media only screen and (max-width: 500px) {
+    .outcome {
+        width: 90%;
+        padding-right: 50px;
+    }
+    .message {
+        font-size: 16px;
+    }
+#word { margin-left: -10%;   }
+#scrabble{  margin-left: 8%;}
+#game { margin-left: 60%;  }
+   #text {
+        font-size: 13px;
+        font-weight: 90;
+    }
+    #personal {
+        font-size: 25px;
+ }
+ .form {
+    width: 400px; 
+}
+.move {
+    margin-top: -120%;
+}
+.sign {
+    width: 800%;
+}
+.blow {
+    font-size: 12px;
+}
+.back {
+    padding-right: 50px;
+    font-size: 17px;
+    font-weight: 500;
+}
+ }
+    @media only screen and (max-width: 375px) {
+        .outcome {
+            width: 95%;
+            padding-right: 90px;
+        }
+        .message {
+            font-size: 15px;
+        }
+        .container {
+            width: 340px;           
+        }
+        .content  .word {
+            font-size: 28px;    
+            letter-spacing: 15px;
+        }
+        .form {
+            width: 400px; 
+        }
+        .move {
+            margin-top: -130%;
+        }
+        .back {
+            padding-right: 50px;
+            font-size: 16px;
+            font-weight: 500;
+        }
+        .sign {
+            width: 500%;
+        }
+        .blow {
+            font-size: 12px;
+            padding-left: 4px;
+        }
+        #text {
+            font-size: 10px;
+            font-weight: 500;
+        }
+    }
+    @media only screen and (max-width: 325px) {
+        .move {
+            margin-top: -150%;
+        }
+        .sign {
+            width: 800%;
+        }
+        .blow {
+            font-size: 10px;
+        }
+        .back {
+            padding-right: 50px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+}

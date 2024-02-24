@@ -25,7 +25,11 @@ thefullView = document.querySelector('.move'),
 theErrorMessage = document.querySelectorAll('.fill'),
 signIn = document.querySelector('.up'),
 skipTheForm = document.querySelector('.secont'),
-theHighScore = document.querySelector('.high')
+theHighScore = document.querySelector('.high'),
+theFailBtn = document.querySelector('.fa'),
+theFailModal = document.querySelector('.fail'),
+theFailedMessage = document.querySelector('.fail-message'),
+theScore = document.querySelector('.score')
 
 
 
@@ -104,6 +108,12 @@ const hiddenShowed = () => {
     theOutcome.classList.remove('hidden')
 }
 
+//THE FAIL FUNCTION 
+const failShowed = () => {
+    overlay.classList.remove('hidden') 
+    theFailModal.classList.remove('hidden')
+}
+
 //THE TIMER
 const startLoseTimer = maxTime => {
      clearInterval(timer)
@@ -129,18 +139,38 @@ const startLoseTimer = maxTime => {
 const initGame = () => {
     startLoseTimer(30)
     let randomObj = words[Math.floor(Math.random() * words.length)]
+    console.log(randomObj.id)
+    let id= randomObj.id
     let wordArray = randomObj.word.split('')
+
+
+
+    let failAno = words[id]
+    let reshuffle = failAno.word.split('')
+
+
+
+
+
+
     for (let i = wordArray.length - 1; i > 0; i--) {
         let j = Math.floor(Math.random() * (i + 1));
         [wordArray[i] , wordArray[j]] =  [wordArray[j] , wordArray[i]]
     }
+
+
+    for (let i = reshuffle.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [reshuffle[i] , reshuffle[j]] =  [reshuffle[j] , reshuffle[i]]
+    }
+
     correctWord = randomObj.word.toLocaleLowerCase()
     console.log(randomObj);
     theWords.textContent = wordArray.join('')
     hintText.textContent = randomObj.hint
     inputField.value = ``
     inputField.setAttribute("maxlength", correctWord.length) 
-}
+
 const checkword = () => {
     startLoseTimer(30)
     let userword = inputField.value.toLocaleLowerCase()
@@ -148,27 +178,34 @@ const checkword = () => {
         MessageBox.textContent = `you did not insert any value`
     }
     console.log(userword);
-    if (userword !== correctWord) {
-       MessageBox.textContent = 'oops!' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is not correct`
-    } else {
-       MessageBox.textContent ='Congratulation' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is correct`
-       score++
-       if (score > highScore) {
-        highScore  = score;
-       }
-      console.log(highScore);
-      theHighScore.addEventListener('click', () => {
-        hiddenShowed()  
-        MessageBox.textContent = `You have a highscore of ${highScore}`
-    } )
-    }
-    hiddenShowed()  
+    
+    if (userword == correctWord) {
+        MessageBox.textContent ='Congratulation' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is correct`
+        score++
+        hiddenShowed()
+       theScore.textContent = score
+       console.log(highScore); 
+     }  else {
+        theFailedMessage.textContent = 'oops!' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is not correct`
+        failShowed()
+        theWords.textContent = reshuffle.join('')
+        hintText.textContent = failAno.hint
+        inputField.value = ``
+        score--
+        theScore.textContent = score
+      
+     
+     }
+   }
+
+
+    checkAnswerBtn.addEventListener('click', checkword)
 }
 
 
 
 refershBtn.addEventListener('click', initGame)
-checkAnswerBtn.addEventListener('click', checkword)
+
 
 const theTime = document.querySelector('.sec')
 
@@ -180,3 +217,11 @@ const okayFun =  () => {
     initGame() 
 }
 okayBtn.addEventListener('click', okayFun)
+
+
+//THE FAIL BUTTON 
+const failBtn = () => {
+    overlay.classList.add('hidden')
+    theFailModal.classList.add('hidden')
+}
+theFailBtn.addEventListener('click', failBtn)

@@ -68,13 +68,14 @@ body {
     border-radius: 3mm;
     background-color: lightcyan;
 }
-.space,
-.spaces {
+.space{
     display: flex;
-    justify-content: space-between;
     align-items: center;  
     padding: 0 0.5rem;
     margin-top: 5%;
+} 
+.spaces {
+    display: flex;
 }
 input[type='text'],
 input[type='email'],
@@ -215,7 +216,8 @@ input[type='text'] {
     z-index: 2;
     transition: transform 1s, opacity 1s;
 }
-.outcome {
+.outcome,
+.fail {
     position: absolute;
     font-size: 15px;
     text-align: center;
@@ -234,7 +236,8 @@ input[type='text'] {
     width: 38%;
     transition: transform 1s, opacity 1s;
 }
-.message {
+.message,
+.fail-message {
   color: rgb(16, 14, 14);
   transition: transform 1s, opacity 1s;
 }
@@ -246,7 +249,12 @@ input[type='text'] {
 .ok {
     margin-left: 100%;
 }
-.okay {
+.fa {
+    margin-left: 50%;
+    width: 100%;
+}
+.okay,
+.try {
     padding: 8px 15px 8px 15px;
     background-color: blue;
     border: none;

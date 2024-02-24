@@ -25,16 +25,19 @@
     }
  }
  @media only screen and (max-width: 750px) {
-    .outcome {
+    .outcome,
+    .fail  {
         width: 75%;
     }
  }
  @media only screen and (max-width: 550px) {
-    .outcome {
+    .outcome,
+    .fail {
         width: 90%;
         padding-right: 50px;
     }
-    .message {
+    .message,
+    .fail-message{
         font-size: 16px;
     }
     .container {
@@ -119,15 +122,17 @@
             width: 400px; 
         }
         .move {
-            margin-top: -130%;
+            margin-top: -20%;
+            width: 20%;
+        }
+        .spaces {
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
         }
         .back {
-            padding-right: 50px;
             font-size: 16px;
             font-weight: 500;
-        }
-        .sign {
-            width: 500%;
         }
         .blow {
             font-size: 12px;

@@ -6,7 +6,6 @@ import{words} from './word.js'
 const theWords = document.querySelector('.word'),
 hintText = document.querySelector('.hint  span'),
 inputField = document.querySelector('.text'),
-refershBtn = document.querySelector('.refresh-word'),
 checkAnswerBtn = document.querySelector('.check-word'),
 MessageBox = document.querySelector('.message'),
 okayBtn = document.querySelector('.ok'),
@@ -29,7 +28,9 @@ theHighScore = document.querySelector('.high'),
 theFailBtn = document.querySelector('.fa'),
 theFailModal = document.querySelector('.fail'),
 theFailedMessage = document.querySelector('.fail-message'),
-theScore = document.querySelector('.score')
+theScore = document.querySelector('.score'),
+theRULE = document.querySelector('.info_box'),
+theCoutnueBtn = document.querySelector('.continue')
 
 
 
@@ -46,8 +47,14 @@ const signUp = () => {
 }
 const skip = () => {
     theSignUpForm.classList.add('hidden')
+     theRULE.classList.remove('hidden')
+}
+
+const continueGame = () => {
     theGame.classList.remove('hidden')
-    thefullView.classList.remove('hidden') 
+    theSignUpForm.classList.add('hidden')
+    thefullView.classList.remove('hidden')
+    theRULE.classList.add('hidden')
     initGame()
 }
 
@@ -93,13 +100,12 @@ if (!user.fname, !user.email, !user.passcode) {
 theDoneButton.addEventListener('click', doneMethod)
 gameStartingBtn.addEventListener('click', startTheGame)
 signIn.addEventListener('click', signUp)
+theCoutnueBtn.addEventListener('click', continueGame)
 skipTheForm.addEventListener('click', skip)
 
 
 
 let correctWord , timer
-let score = 0
-let highScore = 0
 
 
 //THE OUTCOMES FUNCTION
@@ -127,17 +133,24 @@ const startLoseTimer = maxTime => {
 
         if (maxTime >= -1) {
             clearInterval(timer)
-            hiddenShowed()
-            MessageBox.textContent = 'Time up!' +' ' + `${correctWord}`.toLocaleUpperCase() + ' was the correct word'
+            failShowed()
+            theWords.textContent = reshuffle.join('')
+            hintText.textContent = failAno.hint
+            inputField.value = ``
+            theFailedMessage.textContent = 'Time up!' +' ' + `${correctWord}`.toLocaleUpperCase() + ' was the correct word'
             
         }
     }, 1000)
 
 }
 
+
+
+
+
 //THE GAME FUNCTION
 const initGame = () => {
-    startLoseTimer(30)
+    startLoseTimer(60)
     let randomObj = words[Math.floor(Math.random() * words.length)]
     console.log(randomObj.id)
     let id= randomObj.id
@@ -171,7 +184,10 @@ const initGame = () => {
     inputField.value = ``
     inputField.setAttribute("maxlength", correctWord.length) 
 
+   
+
 const checkword = () => {
+
     startLoseTimer(30)
     let userword = inputField.value.toLocaleLowerCase()
     if (!userword) {
@@ -180,19 +196,19 @@ const checkword = () => {
     console.log(userword);
     
     if (userword == correctWord) {
+        let score = 0
         MessageBox.textContent ='Congratulation' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is correct`
-        score++
         hiddenShowed()
+        score++ 
        theScore.textContent = score
-       console.log(highScore); 
      }  else {
         theFailedMessage.textContent = 'oops!' + ' ' + `${userword}`.toLocaleUpperCase() + ' ' + `is not correct`
         failShowed()
         theWords.textContent = reshuffle.join('')
         hintText.textContent = failAno.hint
         inputField.value = ``
-        score--
-        theScore.textContent = score
+        scores--
+        theScore.textContent = scores
       
      
      }
@@ -204,7 +220,6 @@ const checkword = () => {
 
 
 
-refershBtn.addEventListener('click', initGame)
 
 
 const theTime = document.querySelector('.sec')
@@ -221,6 +236,7 @@ okayBtn.addEventListener('click', okayFun)
 
 //THE FAIL BUTTON 
 const failBtn = () => {
+    startLoseTimer(60)
     overlay.classList.add('hidden')
     theFailModal.classList.add('hidden')
 }

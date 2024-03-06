@@ -7,14 +7,16 @@
     <link rel="stylesheet" type="text/css" href="./style.css">
     <link rel="stylesheet" type="text/css" href="./queries.css">
     <link rel="icon" type="image/png" sizes="32x32" href="./brett-jordan-MHS7g_q-6mE-unsplash.jpg">
-    <title>Amiola-scrabble-game</title>
+    <title>EDT 215-scrabble-game</title>
 </head>
 <body>
+
+    <section class="game">
 
     <!--INTRO TO THE GAME-->
    
     <div class="name">
-        <p id="word">word</p>
+        <p id="word">EDT 215</p>
         <p id="scrabble">scrabble</p>
         <p id="game">game</p>
         <p class="moved">
@@ -51,6 +53,28 @@
 
 
 
+        <!--THE RULES-->
+        <div class="info_box hidden">
+            <div class="info_title">
+                <span>Some Rules of this Quiz</span>
+            </div>
+            <div class="info_list">
+                <div class="info">1. You have only <b>60 seconds</b> per each question.</div>
+                <div class="info">2. Once you select your answer, you can't reselect</div>
+                <div class="info">3. You can't  move to the next question if you don't pass the current one</div>
+                <div class="info">4. You can't exit from the quiz while you're playing</div>
+                <div class="info">5. You will get points on the basis of your correct answer</div>
+                <div class="info"></div>
+            </div>
+            <div class="buttons">
+                <button class="quit">Exit Quiz</button>
+                <button class="continue">Continue</button>
+            </div>
+        </div>
+
+
+
+
     <!--THE GAME-->
     <nav class="move hidden"> 
         <div class="spaces ">
@@ -60,7 +84,7 @@
                     sign up
                 </a>
                 <p href="#" class="high blow">
-                    highscore <span class="score">0</span> 
+                    highscore <span class="score"></span> 
                 </p>
             </li>
         </div>
@@ -73,11 +97,10 @@
             <p class="word"></p>
             <div class="details">
                 <p class="hint">HINT: <span></span></p>
-                <p class="time">Time Left: <span><b class="sec">30</b>s</span></p>
+                <p class="time">Time Left: <span><b class="sec">60</b>s</span></p>
             </div>
             <input type="text" placeholder="Enter a valid word" class="text">
-            <div class="buttons">
-                <button class="refresh-word">Refresh Word</button>
+            <div class="buttonses">
                 <button class="check-word">Check Word</button>
             </div>
         </div>    
@@ -99,10 +122,17 @@
         <p class="fail-message"></p>
         <p class="fa"><button class="try">Try again</button></p>
     </div>
-    </section>
+    </section>  
 
 
     <script type="module" src="./js/script.js" defer></script>
     <script type="module" src="./js/word.js" defer></script>
+    </section>
+
+
+    <footer>
+        <p id="soft">An educational software for Drill and practice</p>
+      <p id="by">Built by Group 3 EDT 215 team</p>  
+    </footer>
 </body>
 </html>

@@ -176,8 +176,23 @@ const words = [
     },
     {
         id: 34,
-        word: "amiola",
-        hint: "The developer who created this game"
+        word: "sucide",
+        hint: "Taking one's life by one self"
+    },
+    {
+        id: 35,
+        word: "Football",
+        hint: "A name of a popular sport in Europe"
+    }, 
+    {
+        id: 36,
+        word: "Nigeria",
+        hint: "The Giant of Africa "
+    },
+    {
+        id: 37,
+        word: "processing",
+        hint: "Something that is ongoing"
     }
 ] 
 export {words}

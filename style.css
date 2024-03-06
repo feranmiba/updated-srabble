@@ -10,15 +10,19 @@ html {
     box-sizing: border-box;
 }
 body {
+    background-image: url(./piotr-laskawski-gL7oJLJOb_I-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+.game {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-   background-image: url(./piotr-laskawski-gL7oJLJOb_I-unsplash.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   background-position: center;
+    height: 90vh;
 }
+
 /*---------------------------------------------------*/
 /*THE INTRO TO THE GAME*/
 /*---------------------------------------------------*/
@@ -42,7 +46,7 @@ body {
     border: none;
 }
 .name {
-    line-height: 0.8;
+    line-height: 1;
   align-items: center;
   color: white; 
 }
@@ -113,6 +117,71 @@ input[type='password'] {
     text-decoration: none;
     font-size: 18px;
 }
+
+/*---------------------------------------------------*/
+/*THE RULES OF THE GAME*/
+/*---------------------------------------------------*/
+.info_box,
+.theview {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 540px;
+    background: #fff;
+    border-radius: 5px;
+}
+.info_box .info_title {
+    height: 60px;
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    align-items: center;
+   padding: 0 35px;
+   font-size: 20px;
+   font-weight: 700;
+}
+.info_box .info_list {
+    padding: 15px 35px;
+}
+
+.info_box .info_list .info {
+    margin: 5px 0;
+    font-size: 17px;
+}
+.buttons {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 35px;
+    border-top: 1px solid lightgrey;
+}
+.buttons button {
+    margin: 0 5px;
+    height: 40px;
+    width: 100px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-weight: 550;
+}
+.buttons button.quit {
+    color: #007bff;
+}
+.buttons button.quit:hover,
+.buttons button.quit:active { 
+    background-color: #007bff;
+    color: #fff;
+}
+.buttons button.continue {
+    color: #fff;
+    background-color: #007bff;
+}
+
+
+
+
 /*---------------------------------------------------*/
 /*THE GAME*/
 /*---------------------------------------------------*/
@@ -124,7 +193,7 @@ input[type='password'] {
 }
 .move {
     position: absolute;
-    margin-top: -40%;
+    margin-top: -35%;
 }
 .sign {
     width: 50%;
@@ -183,7 +252,7 @@ input[type='text'] {
 }
 
 /*THE BUTTONS*/
-.buttons {
+.buttonses {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -261,6 +330,21 @@ input[type='text'] {
     border: none;
     color: white;
     text-transform: uppercase;
+}
+/*---------------------------------------------------*/
+/*THE FOOTER STATE*/
+/*---------------------------------------------------*/
+footer {
+    color: white;
+    text-align: center;
+    line-height: 1.5;
+}
+#soft {
+    font-size: 20px;
+}
+#by {
+    font-size: 18px;
+    font-weight: bold;
 }
 /*THE HIDDEN CLASS*/
 .hidden {

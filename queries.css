@@ -68,6 +68,9 @@
     }
  }
  @media only screen and (max-width: 500px) {
+    .game {
+        height: 80vh;
+    }
     .outcome {
         width: 90%;
         padding-right: 50px;
@@ -86,7 +89,7 @@
         font-size: 25px;
  }
  .form {
-    width: 400px; 
+    width: 80%; 
 }
 .move {
     margin-top: -120%;
@@ -102,8 +105,14 @@
     font-size: 17px;
     font-weight: 500;
 }
+.info_box,
+.theview {
+width: 80%;
+border-radius: 5mm;
+}
  }
-    @media only screen and (max-width: 375px) {
+@media only screen and (max-width: 375px) {
+
         .outcome {
             width: 95%;
             padding-right: 90px;
@@ -119,7 +128,7 @@
             letter-spacing: 15px;
         }
         .form {
-            width: 400px; 
+            width: 50%; 
         }
         .move {
             margin-top: -20%;
@@ -142,6 +151,7 @@
             font-size: 10px;
             font-weight: 500;
         }
+
     }
     @media only screen and (max-width: 325px) {
         .move {

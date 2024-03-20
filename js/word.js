@@ -193,6 +193,26 @@ const words = [
         id: 37,
         word: "processing",
         hint: "Something that is ongoing"
+    },
+    {
+        id: 38,
+        word: "currency",
+        hint: "Currency is a generally accepted form of payment,usually issued by a government "
+    },
+    {
+        id: 39,
+        word: "concept",
+        hint: "A plan or intention."
+    },
+    {
+        id: 40,
+        word: "Holiday",
+        hint: "A day of festivity or recreation when no work is done."
+    },
+    {
+        id: 41,
+        word: "Intercourse",
+        hint: "Communication or dealings between individuals or groups."
     }
 ] 
 export {words}

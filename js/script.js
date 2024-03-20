@@ -137,7 +137,7 @@ const startLoseTimer = maxTime => {
             theWords.textContent = reshuffle.join('')
             hintText.textContent = failAno.hint
             inputField.value = ``
-            theFailedMessage.textContent = 'Time up!' +' ' + `${correctWord}`.toLocaleUpperCase() + ' was the correct word'
+            theFailedMessage.textContent = 'Time up! Give another go '
             
         }
     }, 1000)
@@ -182,13 +182,12 @@ const initGame = () => {
     theWords.textContent = wordArray.join('')
     hintText.textContent = randomObj.hint
     inputField.value = ``
-    inputField.setAttribute("maxlength", correctWord.length) 
 
    
 
 const checkword = () => {
 
-    startLoseTimer(30)
+    startLoseTimer(60)
     let userword = inputField.value.toLocaleLowerCase()
     if (!userword) {
         MessageBox.textContent = `you did not insert any value`
